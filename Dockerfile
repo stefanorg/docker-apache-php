@@ -17,12 +17,12 @@ RUN apt-get update -qy \
 
 # Install
 RUN buildDeps=" \
-        libpng12-dev \
+        libpng-dev \
         libjpeg-dev \
         libmcrypt-dev \
         libxml2-dev \
         libicu-dev \
-        freetype* \
+        libfreetype6-dev \
         libsqlite3-dev \
     "; \
     set -x \
@@ -33,9 +33,6 @@ RUN buildDeps=" \
     gd \
     mbstring \
     mysqli \
-    mcrypt \
-    mysql \
-    mcrypt \
     intl \
     pdo \
     pdo_mysql \
@@ -55,7 +52,7 @@ RUN buildDeps=" \
 ##########
 RUN pear config-set php_ini /usr/local/etc/php/php.ini
 RUN pecl config-set php_ini /usr/local/etc/php/php.ini
-RUN yes '' | pecl install apcu-4.0.10
+RUN yes '' | pecl install apcu-5.1.9
 
 
 ##########
