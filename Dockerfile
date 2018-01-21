@@ -32,6 +32,9 @@ RUN buildDeps=" \
     && docker-php-ext-install \
     gd \
     mbstring \
+    mysqli \
+    mcrypt \
+    mysql \
     mcrypt \
     intl \
     pdo \
